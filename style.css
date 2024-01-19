@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400&family=Roboto+Mono&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;400&family=Roboto+Flex:opsz,wght@8..144,400;8..144,900;8..144,1000&family=Roboto+Mono:wght@400;700&display=swap');
 :root {
   --bg-color: #050e08;
   --light-color: #ffffff;
@@ -14,7 +13,6 @@
   --dark-color: #ffffff;
   --border-line: solid 1px var(--light-color);
   --text-margin: 0px;
-  
 }
 
 body {
@@ -26,6 +24,7 @@ body {
 
 .text {
   font-size: 22px;
+  font-weight: 100;
   font-family: "Roboto Mono", monospace;
 }
 
@@ -66,13 +65,11 @@ header.container {
   animation: qodef-shake-logo 2.8s infinite;
 }
 
-
 .navbar-links {
   border-right: var(--border-line);
   border-left: var(--border-line);
   height: 100%;
   transition: 0.4s;
-
 }
 
 .nav-link {
@@ -98,7 +95,10 @@ header.container {
   align-items: center;
   text-align: center;
   transition: 0.4s;
-  
+}
+
+.fa-bars {
+  font-size:34px;
 }
 
 /* switch */
@@ -133,8 +133,8 @@ header.container {
 }
 
 .wrapper {
- transition: 0.4s;
- margin: 10px;
+  transition: 0.4s;
+  margin: 10px;
 }
 
 .wrapper:hover {
@@ -174,13 +174,12 @@ header.container {
 #hero h1 {
   font-size: 7.320644216691069vw;
   font-weight: 100;
-  /* font-family: 'Roboto Flex', sans-serif; */
+  font-family: "Roboto Flex", sans-serif;
 }
 .hero-font {
-  font-weight: 400;
-  /* animation: qodef-font-weight-animation-to-regular 2.6s
-    cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite forwards;
-    transform-origin: 50% 50%; */
+  /* font-variation-settings: 'wght' 400; */
+  animation: font-animation 2.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite forwards;
+  animation-delay: (0 * 150ms);
 }
 
 /* Mission */
@@ -210,7 +209,6 @@ header.container {
   text-decoration: none;
   font-size: 22px;
   color: var(--light-color);
-   
 }
 
 /* Marquee */
@@ -227,14 +225,12 @@ header.container {
   font-size: 16px;
 }
 
-
 /* Tokenomics */
 .token-img {
   max-width: 700px;
   margin-top: 40px;
   margin-inline: auto;
 }
-
 
 /* Footer */
 #footer {
@@ -256,7 +252,6 @@ header.container {
 }
 
 /* Animation */
-
 
 @keyframes qodef-shake-logo {
   0%,
@@ -296,16 +291,15 @@ header.container {
   }
 }
 
-
-@keyframes qodef-font-weight-animation-to-regular {
+@keyframes font-animation {
   0%,
   100%,
-  16% {
-    font-weight: 400;
+  30% {
+    font-variation-settings: 'wght' 600;
   }
 
-  8% {
-    font-weight: 100;
+  15% {
+    font-variation-settings: 'wght' 100;
   }
 }
 
@@ -319,6 +313,54 @@ header.container {
   animation-delay: 450ms;
 }
 
+/* Images animation */
+@keyframes circularMotion {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-10px, 0);
+  }
+  100% {
+    transform: translate(0, -10px);
+  }
+
+}
+
+@keyframes squareMotion {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  75% {
+    transform: translate(0, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.image-2 {
+  animation: squareMotion 5s linear infinite alternate; /* Adjust the duration as needed */
+}
+
+.image-1 {
+  position: relative;
+  animation: circularMotion 5s linear infinite alternate; /* Adjust the duration as needed */
+}
+
+
 /* Scroll */
 .scroll {
   display: flex;
@@ -329,7 +371,7 @@ header.container {
 /* To */
 
 /* Small devices (landscape phones, 576px and down) */
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
   #hero img {
     display: none;
   }
@@ -343,8 +385,6 @@ header.container {
     text-align: center;
   }
 
-  
-
   .text {
     font-size: 16px;
     line-height: 1.5;
@@ -354,23 +394,18 @@ header.container {
     font-size: 24px;
   }
   .footer-border {
-   border-left: none;
-   border-top: var(--border-line);
+    border-left: none;
+    border-top: var(--border-line);
   }
 
   #roadmap .text {
     max-width: 300px;
     margin-inline: auto;
   }
-
- }
-
-
+}
 
 /* Medium devices (tablets, 768px and down) */
 @media (max-width: 908px) {
-
-
   .navbar {
     height: 70px;
   }
