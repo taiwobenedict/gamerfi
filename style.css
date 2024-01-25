@@ -221,6 +221,10 @@ header.container {
   color: var(--light-color);
 }
 
+.side-img img {
+  max-width: fit-content;
+}
+
 /* Marquee */
 #marquee {
   overflow: hidden;
@@ -263,6 +267,14 @@ header.container {
 
 .footer-border {
   border-left: var(--border-line);
+}
+
+.social-icon {
+  color: var(--light-color);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 10px;
+  transition: 0.4s;
 }
 
 /* Animation */

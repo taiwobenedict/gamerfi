@@ -3,10 +3,10 @@ const modeText = document.querySelector('.mode')
 
 
 // Smooth scrolling
-$("a").on("click", function (e) {
+$("li a").on("click", function (e) {
   e.preventDefault();
   const href = $(this).attr("href");
-  $("html, body").animate({ scrollTop: $(href).offset().top  -100}, 500);
+  $("html, body").animate({ scrollTop: $(href).offset().top  -100}, 1000);
 });
 
 // Theme mode
